@@ -19,6 +19,7 @@ exports.detail_get_all = (req, res, next) => {
 						terassa: doc.terassa,
 						bedroom: doc.bedroom,
 						garage: doc.garage,
+						projectImages: doc.projectImages,
 						request: {
 							type: 'GET',
 							url: 'http:/localhost:3000/project-details/' + doc._id
@@ -51,6 +52,7 @@ exports.details_create_detail = (req, res, next) => {
 				terassa: req.body.terassa,
 				bedroom: req.body.bedroom,
 				garage: req.body.garage,
+				projectImages: req.files.map(file => file.path)
 			});
 			return projectDetail.save()
 		})
@@ -63,10 +65,11 @@ exports.details_create_detail = (req, res, next) => {
 					square: result.square,
 					floar: result.floar,
 					firstFloar: result.firstFloar,
-					SecondFloar: result.SecondFloar,
+					secondFloar: result.secondFloar,
 					terassa: result.terassa,
 					bedroom: result.bedroom,
 					garage: result.garage,
+					projectImages: result.projectImages
 				},
 				request: {
 					type: 'GET',

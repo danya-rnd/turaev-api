@@ -10,6 +10,7 @@ const orderSchema = mongoose.Schema({
 	terassa: {type: String, required: true},
 	bedroom: {type: String, required: true},
 	garage	: {type: String, required: true},
+	projectImages: { type: Array, required: true }
 });
 
 module.exports = mongoose.model('ProjectDetail', orderSchema);

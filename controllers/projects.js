@@ -16,7 +16,7 @@ exports.projects_get_all = (req, res, next) => {
 						name: doc.name,
 						description: doc.description,
 						metres: doc.metres,
-						projectImage: 'http://localhost:3000/' + doc.projectImage,
+						projectImage: 'http://94.250.251.234:3000/' + doc.projectImage,
 						request: {
 							type: 'GET',
 							url: 'http:/localhost:3000/projectss/' + doc._id
